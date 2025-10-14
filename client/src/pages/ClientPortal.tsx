@@ -28,6 +28,8 @@ import nutritionist1 from "@assets/generated_images/Female_nutritionist_professi
 import nutritionist2 from "@assets/generated_images/Male_nutritionist_professional_portrait_5241518d.png";
 import customer1 from "@assets/generated_images/Happy_customer_testimonial_photo_4e688e5c.png";
 import customer2 from "@assets/generated_images/Business_professional_customer_testimonial_18fae654.png";
+import newsCalorie from "@assets/stock_images/healthy_nutrition_me_799f8107.jpg";
+import newsSuperfoods from "@assets/stock_images/superfoods_healthy_i_2052ee3c.jpg";
 
 export default function ClientPortal() {
   const [activeTab, setActiveTab] = useState("home");
@@ -106,10 +108,12 @@ export default function ClientPortal() {
     {
       title: "How to Identify Your Daily Calorie Needs Based on Your Goals",
       description: "Understanding your daily calorie needs is a key step in achieving your health and fitness goals, whether...",
+      image: newsCalorie,
     },
     {
       title: "Top 10 Superfoods to Include in Your Daily Diet",
       description: "Superfoods are nutrient-dense ingredients that offer immense health benefits. Incorporating them into...",
+      image: newsSuperfoods,
     },
   ];
 
@@ -422,7 +426,13 @@ export default function ClientPortal() {
                       viewport={viewportConfig}
                       className="bg-card rounded-2xl overflow-hidden hover-elevate h-full"
                     >
-                      <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5"></div>
+                      <div className="aspect-video overflow-hidden">
+                        <img 
+                          src={article.image} 
+                          alt={article.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div className="p-4 md:p-6">
                         <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                           {article.title}
