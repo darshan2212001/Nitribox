@@ -60,7 +60,7 @@ export default function DeliveryPortalEnhanced() {
             }).catch(console.error);
           }
         },
-        (error) => console.error("GPS Error:", error),
+        (error) => console.warn("GPS Location unavailable:", error.message),
         { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
       );
 

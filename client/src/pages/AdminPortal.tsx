@@ -439,7 +439,7 @@ export default function AdminPortal() {
                   <div key={plan.id} className="flex items-center justify-between p-4 border border-border rounded-lg">
                     <div>
                       <p className="font-semibold text-foreground">{plan.title}</p>
-                      <p className="text-sm text-muted-foreground">₹{plan.currentPrice.toLocaleString()}/month</p>
+                      <p className="text-sm text-muted-foreground">₹{(plan.currentPrice || 0).toLocaleString()}/month</p>
                     </div>
                     <Button variant="outline" size="sm" className="rounded-full" data-testid={`button-edit-meal-${plan.id}`}>
                       Edit
@@ -484,7 +484,7 @@ export default function AdminPortal() {
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-semibold text-primary">₹{order.price.toLocaleString()}</p>
+                      <p className="text-sm font-semibold text-primary">₹{(order.price || 0).toLocaleString()}</p>
                       <span className={`text-xs ${order.status === 'delivered' ? 'text-success' : 'text-warning'}`}>
                         {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                       </span>

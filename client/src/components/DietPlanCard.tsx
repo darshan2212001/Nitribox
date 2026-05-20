@@ -67,10 +67,10 @@ export default function DietPlanCard({
         </p>
         <div className="flex items-center gap-2 mb-3">
           <span className="text-sm text-[#FF6B6B] line-through" data-testid="text-original-price">
-            ₹{originalPrice.toLocaleString()}
+            ₹{(originalPrice || 0).toLocaleString()}
           </span>
           <span className="text-xl font-bold text-primary" data-testid="text-current-price">
-            ₹{currentPrice.toLocaleString()}/month
+            ₹{(currentPrice || 0).toLocaleString()}/month
           </span>
         </div>
         <div className="flex items-center gap-1 mb-4">
@@ -79,7 +79,7 @@ export default function DietPlanCard({
             {rating}
           </span>
           <span className="text-sm text-muted-foreground">
-            ({reviewCount.toLocaleString()}+)
+            ({(reviewCount || 0).toLocaleString()}+)
           </span>
         </div>
         <Button
