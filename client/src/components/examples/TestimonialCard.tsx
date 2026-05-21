@@ -1,5 +1,5 @@
 import TestimonialCard from '../TestimonialCard';
-import customerImage from '@assets/generated_images/Happy_customer_testimonial_photo_4e688e5c.png';
+const customerImage = "/images/generated/Happy_customer_testimonial_photo_4e688e5c.png";
 
 export default function TestimonialCardExample() {
   return (

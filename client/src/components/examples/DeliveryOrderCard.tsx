@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DeliveryOrderCard from '../DeliveryOrderCard';
-import userImage from '@assets/generated_images/Happy_customer_testimonial_photo_4e688e5c.png';
+const userImage = "/images/generated/Happy_customer_testimonial_photo_4e688e5c.png";
 
 export default function DeliveryOrderCardExample() {
   const [status, setStatus] = useState<'pickup' | 'delivering' | 'delivered'>('pickup');

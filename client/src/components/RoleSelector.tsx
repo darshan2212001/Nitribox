@@ -1,11 +1,14 @@
-import { Users, Stethoscope, Truck, Shield, ChefHat } from "lucide-react";
+import { Users, Stethoscope, Truck, Shield, ChefHat, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { useAuth } from "../hooks/useAuth";
 
 interface RoleSelectorProps {
   onRoleSelect: (role: string) => void;
 }
 
 export default function RoleSelector({ onRoleSelect }: RoleSelectorProps) {
+  const { user, logout } = useAuth();
   const roles = [
     {
       id: 'client',
@@ -59,6 +62,32 @@ export default function RoleSelector({ onRoleSelect }: RoleSelectorProps) {
           <p className="text-lg text-foreground/70">
             Home-Cooked Goodness, Perfected by Nutritionists
           </p>
+          
+          {user && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="mt-6 inline-flex items-center gap-4 bg-white rounded-full px-6 py-3 shadow-lg"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <Users className="w-4 h-4 text-emerald-600" />
+                </div>
+                <span className="font-medium text-gray-900">{user.name}</span>
+                <span className="text-sm text-gray-500">({user.role})</span>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={logout}
+                className="flex items-center gap-2"
+              >
+                <LogOut className="w-4 h-4" />
+                Logout
+              </Button>
+            </motion.div>
+          )}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

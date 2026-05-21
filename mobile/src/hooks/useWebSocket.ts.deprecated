@@ -1,0 +1,21 @@
+/**
+ * @deprecated This file uses socket.io-client which is incompatible with the FastAPI WebSocket backend.
+ * 
+ * The backend uses native WebSocket (FastAPI WebSocket endpoint `/ws`), not socket.io.
+ * 
+ * Please use `mobileWebSocket` from `../lib/websocket` instead.
+ * 
+ * This file is kept for reference but should not be imported or used.
+ * 
+ * Migration guide:
+ * - Replace `useWebSocket` with `mobileWebSocket` from `../lib/websocket`
+ * - Replace `socket.emit()` with `mobileWebSocket.send()`
+ * - Replace `socket.on()` with `mobileWebSocket.on()`
+ * - Replace `socket.off()` with cleanup functions returned from `mobileWebSocket.on()`
+ */
+
+// This file intentionally left mostly empty as a migration reference.
+// All functionality has been moved to mobile/src/lib/websocket.ts (MobileWebSocket class)
+
+export {};
+

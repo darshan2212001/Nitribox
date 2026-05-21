@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZyaeL NutriBox - Parallel Test Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .summary-card h3 {
+            margin: 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .summary-card p {
+            margin: 5px 0 0 0;
+            color: #666;
+        }
+        .success { color: #28a745; }
+        .failed { color: #dc3545; }
+        .warning { color: #ffc107; }
+        .tests {
+            padding: 30px;
+        }
+        .test-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .test-header {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .test-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .test-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .status-timeout {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .test-details {
+            padding: 20px;
+        }
+        .test-details p {
+            margin: 5px 0;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .recommendations {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .recommendations h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ZyaeL NutriBox</h1>
+            <p>Parallel Test Results Report</p>
+            <p>Generated on 2025-10-27 19:59:16</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3 class="success">100.0%</h3>
+                <p>Success Rate</p>
+            </div>
+            <div class="summary-card">
+                <h3>5</h3>
+                <p>Tests Passed</p>
+            </div>
+            <div class="summary-card">
+                <h3>0</h3>
+                <p>Tests Failed</p>
+            </div>
+            <div class="summary-card">
+                <h3>5</h3>
+                <p>Total Tests</p>
+            </div>
+            <div class="summary-card">
+                <h3>26.1s</h3>
+                <p>Total Duration</p>
+            </div>
+        </div>
+        
+        <div class="tests">
+            <h2>Test Results</h2>
+
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="test-name">API Health Check</div>
+                    <div class="test-status status-success">SUCCESS</div>
+                </div>
+                <div class="test-details">
+                    <p><strong>Duration:</strong> 2.06 seconds</p>
+                    <p><strong>Timestamp:</strong> <span class="timestamp">2025-10-27T19:57:48.457920</span></p>
+<p><strong>API Status:</strong> running</p><p><strong>Response Time:</strong> 2.05s</p>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="test-name">Database Connectivity</div>
+                    <div class="test-status status-success">SUCCESS</div>
+                </div>
+                <div class="test-details">
+                    <p><strong>Duration:</strong> 0.64 seconds</p>
+                    <p><strong>Timestamp:</strong> <span class="timestamp">2025-10-27T19:57:51.277370</span></p>
+<p><strong>Clients:</strong> 0</p><p><strong>Nutritionists:</strong> 0</p><p><strong>Orders:</strong> 0</p>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="test-name">API Endpoints</div>
+                    <div class="test-status status-success">SUCCESS</div>
+                </div>
+                <div class="test-details">
+                    <p><strong>Duration:</strong> 20.56 seconds</p>
+                    <p><strong>Timestamp:</strong> <span class="timestamp">2025-10-27T19:57:38.483210</span></p>
+<p><strong>Endpoint Success Rate:</strong> 60.0%</p><p><strong>Successful Endpoints:</strong> 6</p>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="test-name">Sample Data Generation</div>
+                    <div class="test-status status-success">SUCCESS</div>
+                </div>
+                <div class="test-details">
+                    <p><strong>Duration:</strong> 0.70 seconds</p>
+                    <p><strong>Timestamp:</strong> <span class="timestamp">2025-10-27T19:59:08.950148</span></p>
+<p><strong>Generated Clients:</strong> 0</p><p><strong>Generated Nutritionists:</strong> 0</p>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="test-name">WebSocket Connectivity</div>
+                    <div class="test-status status-success">SUCCESS</div>
+                </div>
+                <div class="test-details">
+                    <p><strong>Duration:</strong> 2.15 seconds</p>
+                    <p><strong>Timestamp:</strong> <span class="timestamp">2025-10-27T19:57:56.425840</span></p>
+<p><strong>Connection:</strong> Successful</p><p><strong>Test Message:</strong> test_message_from_test_5</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="recommendations">
+            <h3>Recommendations</h3>
+<p>⚠️ Some tests are failing. Review the failed tests and fix the issues.</p>
+        </div>
+    </div>
+</body>
+</html>

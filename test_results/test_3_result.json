@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "successful_endpoints": 6,
+  "failed_endpoints": 4,
+  "total_endpoints": 10,
+  "success_rate": 60.0,
+  "endpoint_results": {
+    "/api/health": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 2.082664,
+      "content_length": 174
+    },
+    "/api/clients": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 0.004795,
+      "content_length": 2
+    },
+    "/api/nutritionists": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 0.005118,
+      "content_length": 2
+    },
+    "/api/delivery-agents": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 0.004442,
+      "content_length": 2
+    },
+    "/api/orders": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 0.005627,
+      "content_length": 2
+    },
+    "/api/daily-meals": {
+      "status": "warning",
+      "response_code": 404,
+      "response_time": 2.030599,
+      "error": "HTTP 404"
+    },
+    "/api/reports": {
+      "status": "warning",
+      "response_code": 404,
+      "response_time": 2.054066,
+      "error": "HTTP 404"
+    },
+    "/api/meal-plans": {
+      "status": "success",
+      "response_code": 200,
+      "response_time": 0.004787,
+      "content_length": 2021
+    },
+    "/api/subscriptions": {
+      "status": "warning",
+      "response_code": 405,
+      "response_time": 0.003243,
+      "error": "HTTP 405"
+    },
+    "/api/consultations": {
+      "status": "warning",
+      "response_code": 405,
+      "response_time": 2.050566,
+      "error": "HTTP 405"
+    }
+  },
+  "duration": 20.557790517807007,
+  "timestamp": "2025-10-27T19:57:38.483210",
+  "test_name": "API Endpoints"
+}

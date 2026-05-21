@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "existing_records": {
+    "clients": 0,
+    "nutritionists": 0,
+    "orders": 0,
+    "subscriptions": 0,
+    "meal_plans": 5,
+    "daily_meals": 0
+  },
+  "duration": 0.7045943737030029,
+  "timestamp": "2025-10-27T19:59:08.950148",
+  "test_name": "Sample Data Generation (Simplified)"
+}

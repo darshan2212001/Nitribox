@@ -1,5 +1,5 @@
 import NutritionistCard from '../NutritionistCard';
-import nutritionistImage from '@assets/generated_images/Female_nutritionist_professional_portrait_a8930d89.png';
+const nutritionistImage = "/images/generated/Female_nutritionist_professional_portrait_a8930d89.png";
 
 export default function NutritionistCardExample() {
   return (

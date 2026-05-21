@@ -2,6 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Testimonial slider animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+/* Line clamp utilities for mobile */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .hover-elevate:hover {
+    transform: none;
+  }
+  
+  .animate-scroll-left,
+  .animate-scroll-right {
+    animation-duration: 20s;
+  }
+  
+  /* Prevent iOS zoom on input focus */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Scrollbar hide utility for horizontal scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch manipulation for better mobile interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area support for devices with notches */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
 /* LIGHT MODE */
 :root {
   --button-outline: rgba(0,0,0, .10);
@@ -239,6 +325,46 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold leading-snug;
+  }
+
+  h5 {
+    @apply text-base md:text-lg font-semibold leading-normal;
+  }
+
+  h6 {
+    @apply text-sm md:text-base font-semibold leading-normal;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Consistent spacing utilities */
+  .section-spacing {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
   }
 }
 

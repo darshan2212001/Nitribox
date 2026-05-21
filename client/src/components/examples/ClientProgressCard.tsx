@@ -1,5 +1,5 @@
 import ClientProgressCard from '../ClientProgressCard';
-import clientImage from '@assets/generated_images/Business_professional_customer_testimonial_18fae654.png';
+const clientImage = "/images/generated/Business_professional_customer_testimonial_18fae654.png";
 
 export default function ClientProgressCardExample() {
   return (

@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "ZyaeL NutriBox",
+    "slug": "zyael-nutribox",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zyael.nutribox"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.zyael.nutribox"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "zyaelnutribox",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      "expo-location",
+      "expo-image-picker"
+    ],
+    "extra": {
+      "apiUrl": "http://localhost:8000",
+      "wsUrl": "ws://localhost:8000"
+    }
+  }
+}

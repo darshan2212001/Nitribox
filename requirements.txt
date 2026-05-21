@@ -1,0 +1,76 @@
+# ZyaeL NutriBox - Python Dependencies
+# 
+# Installation:
+#   pip install -r requirements.txt
+#
+# For development/testing, install optional packages:
+#   pip install pytest>=7.4.0 pytest-asyncio>=0.21.0
+#
+# For MySQL production (if using MySQL instead of SQLite):
+#   pip install mysql-connector-python>=8.2.0
+
+# ============================================================================
+# CORE RUNTIME DEPENDENCIES (REQUIRED)
+# ============================================================================
+
+# Core FastAPI and Web Server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Database ORM and Drivers
+sqlalchemy>=2.0.0
+PyMySQL>=1.1.0
+alembic>=1.13.0
+
+# Scheduling
+APScheduler>=3.10.0
+
+# Data Validation
+pydantic>=2.5.0
+pydantic[email]>=2.5.0
+
+# Authentication and Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+# bcrypt 4.x breaks passlib 1.7.x (__about__ removed); keep 3.x until passlib supports 4.x
+bcrypt>=3.2.0,<4.0.0
+python-dotenv>=1.0.0
+
+# WebSocket Support
+websockets>=12.0
+
+# HTTP Clients
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# ============================================================================
+# OPTIONAL DEPENDENCIES
+# ============================================================================
+
+# MySQL: PyMySQL is listed above (mysql+pymysql:// URLs). Alternative: mysql-connector-python.
+
+# Testing Framework (OPTIONAL - only needed for running tests)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+httpx>=0.27.0
+
+# Additional Utilities
+# Already included in Python stdlib but listing for clarity:
+# - asyncio (stdlib)
+# - json (stdlib)
+# - datetime (stdlib)
+# - typing (stdlib)
+# - os (stdlib)
+# - sys (stdlib)
+# - hashlib (stdlib)
+# - re (stdlib)
+# - logging (stdlib)
+# - traceback (stdlib)
+# - urllib.parse (stdlib)
+# - enum (stdlib)
+# - uuid (stdlib)
+# - time (stdlib)
+# - pathlib (stdlib)
+# - subprocess (stdlib)
+

@@ -6,12 +6,13 @@ import DeliveryOrderCard from "@/components/DeliveryOrderCard";
 import StatsCard from "@/components/StatsCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import userImage1 from "@assets/generated_images/Happy_customer_testimonial_photo_4e688e5c.png";
-import userImage2 from "@assets/generated_images/Business_professional_customer_testimonial_18fae654.png";
+const userImage1 = "/images/generated/Happy_customer_testimonial_photo_4e688e5c.png";
+const userImage2 = "/images/generated/Business_professional_customer_testimonial_18fae654.png";
 
 export default function DeliveryPortal() {
   //todo: remove mock functionality
   type OrderStatus = 'pickup' | 'delivering' | 'delivered';
+  const [activeTab, setActiveTab] = useState<"pickup" | "delivering" | "completed">("pickup");
   const [orders, setOrders] = useState<Array<{
     id: string;
     userName: string;
@@ -106,7 +107,7 @@ export default function DeliveryPortal() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <Tabs defaultValue="pickup" className="w-full">
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="pickup" data-testid="tab-pickup">
               Pickup ({pickupOrders.length})

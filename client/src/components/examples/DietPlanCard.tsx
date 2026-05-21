@@ -1,5 +1,5 @@
 import DietPlanCard from '../DietPlanCard';
-import weightLossMeal from '@assets/generated_images/Healthy_balanced_meal_food_36201b9b.png';
+const weightLossMeal = "/images/generated/Healthy_balanced_meal_food_36201b9b.png";
 
 export default function DietPlanCardExample() {
   return (

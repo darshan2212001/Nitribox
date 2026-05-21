@@ -1,5 +1,5 @@
 import HeroBanner from '../HeroBanner';
-import bannerImage from '@assets/generated_images/Home-cooked_comfort_food_banner_9590a8d1.png';
+const bannerImage = "/images/generated/Home-cooked_comfort_food_banner_9590a8d1.png";
 
 export default function HeroBannerExample() {
   return (

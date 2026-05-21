@@ -1,62 +1,140 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import React from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { Loader2 } from 'lucide-react';
 
-import { cn } from "@/lib/utils"
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
-  " hover-elevate active-elevate-2",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground border border-primary-border",
-        destructive:
-          "bg-destructive text-destructive-foreground border border-destructive-border",
-        outline:
-          // Shows the background color of whatever card / sidebar / accent background it is inside of.
-          // Inherits the current text color.
-          " border [border-color:var(--button-outline)]  shadow-xs active:shadow-none ",
-        secondary: "border bg-secondary text-secondary-foreground border border-secondary-border ",
-        // Add a transparent border so that when someone toggles a border on later, it doesn't shift layout/size.
-        ghost: "border border-transparent",
-      },
-      // Heights are set as "min" heights, because sometimes Ai will place large amount of content
-      // inside buttons. With a min-height they will look appropriate with small amounts of content,
-      // but will expand to fit large amounts of content.
-      size: {
-        default: "min-h-9 px-4 py-2",
-        sm: "min-h-8 rounded-md px-3 text-xs",
-        lg: "min-h-10 rounded-md px-8",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
-)
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+  fullWidth?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-Button.displayName = "Button"
+  ({ 
+    className, 
+    variant = 'default', 
+    size = 'default', 
+    loading = false,
+    icon,
+    iconPosition = 'left',
+    fullWidth = false,
+    children, 
+    disabled,
+    ...props 
+  }, ref) => {
+    const baseClasses = 'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+    
+    const variants = {
+      default: 'bg-emerald-600 text-white hover:bg-emerald-700',
+      destructive: 'bg-red-600 text-white hover:bg-red-700',
+      outline: 'border border-emerald-600 text-emerald-600 hover:bg-emerald-50',
+      secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200',
+      ghost: 'text-emerald-600 hover:bg-emerald-50',
+      link: 'text-emerald-600 underline-offset-4 hover:underline',
+    };
 
-export { Button, buttonVariants }
+    const sizes = {
+      default: 'h-10 px-4 py-2',
+      sm: 'h-9 rounded-md px-3',
+      lg: 'h-11 rounded-md px-8',
+      icon: 'h-10 w-10',
+    };
+
+    const isDisabled = disabled || loading;
+
+    return (
+      <motion.button
+        className={cn(
+          baseClasses,
+          variants[variant],
+          sizes[size],
+          fullWidth && 'w-full',
+          className
+        )}
+        ref={ref}
+        disabled={isDisabled}
+        whileHover={!isDisabled ? { scale: 1.02 } : {}}
+        whileTap={!isDisabled ? { scale: 0.98 } : {}}
+        transition={{ duration: 0.1 }}
+        {...props}
+      >
+        <div className="flex items-center gap-2">
+          {loading && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Loader2 className="h-4 w-4 animate-spin" />
+            </motion.div>
+          )}
+          
+          {!loading && icon && iconPosition === 'left' && (
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {icon}
+            </motion.div>
+          )}
+          
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            {loading ? 'Loading...' : children}
+          </motion.span>
+          
+          {!loading && icon && iconPosition === 'right' && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {icon}
+            </motion.div>
+          )}
+        </div>
+      </motion.button>
+    );
+  }
+);
+
+Button.displayName = 'Button';
+
+export type { ButtonProps };
+
+export function buttonVariants(
+  props: {
+    variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+    size?: 'default' | 'sm' | 'lg' | 'icon';
+  } = {},
+): string {
+  const { variant = 'default', size = 'default' } = props;
+  const baseClasses = 'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+  
+  const variants = {
+    default: 'bg-emerald-600 text-white hover:bg-emerald-700',
+    destructive: 'bg-red-600 text-white hover:bg-red-700',
+    outline: 'border border-emerald-600 text-emerald-600 hover:bg-emerald-50',
+    secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200',
+    ghost: 'text-emerald-600 hover:bg-emerald-50',
+    link: 'text-emerald-600 underline-offset-4 hover:underline',
+  };
+
+  const sizes = {
+    default: 'h-10 px-4 py-2',
+    sm: 'h-9 rounded-md px-3',
+    lg: 'h-11 rounded-md px-8',
+    icon: 'h-10 w-10',
+  };
+
+  return cn(baseClasses, variants[variant], sizes[size]);
+}
+
+export { Button };

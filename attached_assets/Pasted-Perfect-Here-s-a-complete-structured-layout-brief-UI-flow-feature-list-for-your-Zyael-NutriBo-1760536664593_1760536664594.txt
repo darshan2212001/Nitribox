@@ -1,0 +1,212 @@
+Perfect 👍 Here’s a complete structured layout brief (UI flow + feature list) for your Zyael NutriBox App UI Changes, written in a clean developer-friendly way you can share directly with your UI/UX team or developers:
+
+
+---
+
+🥗 Zyael NutriBox App — UI & UX Update Plan
+
+
+---
+
+1️⃣ Home Page (Main Dashboard)
+
+Sections (Top to Bottom):
+
+1. Location & Search Bar
+
+📍 Location selector: “Delivering to [User Location]”
+
+🔍 Search bar: “Search meals, nutrition plans, or experts…”
+
+
+
+2. Hero Slider (Main Banner)
+
+Auto-rotating image slider (3–4 slides)
+
+Example slides:
+
+“Personalized Nutrition for Every Goal 🍱”
+
+“Track. Eat. Transform. Your Health Journey Starts Here.”
+
+“Expert Nutrition Support — 4 Consults/Month!”
+
+
+
+
+3. Category Section (Inspired by HealthifyMe)
+
+Icons or cards with short labels:
+
+🥦 Weight Loss Plans
+
+💪 Muscle Gain
+
+❤️ Balanced Nutrition
+
+🍛 Diabetic & Heart-Friendly Plans
+
+🧘 Detox & Wellness
+
+
+➕ View All Categories button
+
+
+
+4. Slider: Nutritionist Consultation
+
+Title: “Talk to Your Nutritionist Anytime 👩‍⚕️”
+
+Horizontal slider showing nutritionist cards:
+
+Profile image, name, specialization, “Consult Now” button
+
+
+CTA: “Book Your Free Consultation”
+
+
+
+
+
+---
+
+2️⃣ Nutrition Products Section
+
+Title: “Our Nutrition Products 🍲”
+
+Grid/Card Layout:
+
+Product image
+
+Name (e.g., “NutriBox — 30 Days Plan”)
+
+Price (with discounted tag)
+
+Button: “View More”
+
+
+
+
+---
+
+3️⃣ Promotional Slider (Middle Banner)
+
+Second hero-style banner section
+
+Example slides:
+
+“Zyael NutriBox — Delivered Fresh Daily”
+
+“Save ₹3,000 on 90-Day Plans!”
+
+“Join 10,000+ Happy Customers!”
+
+
+
+
+---
+
+4️⃣ Blog & News Section
+
+Title: “Health Blogs & Nutrition News 📰”
+
+Slider view (like cards):
+
+Blog image thumbnail
+
+SEO title
+
+Short description (2 lines max)
+
+“Read More” button
+
+
+➕ View All Blogs button
+
+
+
+---
+
+5️⃣ Smart Notification Pop-Up
+
+Trigger: When user stays more than 2 minutes on app
+
+Pop-up message:
+
+“Need help choosing the right plan? 💬 Speak to our Nutritionist Now!”
+
+Buttons: [Chat Now] [Later]
+
+
+
+
+---
+
+6️⃣ Cart & Checkout Page
+
+Features:
+
+Product list with price breakdown
+
+Coupon section:
+
+“Apply Discount Code”
+
+“Referral Coupon”
+
+Automatic savings calculation
+
+
+Total price + “Proceed to Payment” button
+
+
+
+---
+
+7️⃣ Tracking & Progress Section
+
+Tabs: Daily | Weekly | Monthly
+
+Metrics:
+
+✅ Calorie intake (consumed vs. goal)
+
+✅ Protein / Carbs / Fats breakdown
+
+✅ Water intake tracker
+
+
+“Add Weight” button (manual entry)
+
+Graphs for trends
+
+📄 “Download Health Report” (PDF format)
+
+
+
+---
+
+8️⃣ Footer
+
+Quick links: Home | My Plans | Blog | Contact | Support
+
+App version info
+
+“Zyael NutriBox — Nutrition Crafted With Care” tagline
+
+
+
+---
+
+💡 Additional Developer Notes
+
+Theme: Clean white background, pastel accent colors (green + orange for health tone)
+
+Font: Rounded sans-serif (like Poppins or Nunito)
+
+Animation: Smooth transitions between sliders and cards
+
+Responsiveness: Must adapt for both Android & iOS screens
+
+Push Notifications (Optional): Trigger at specific times (e.g., “Time for your lunch meal!”)

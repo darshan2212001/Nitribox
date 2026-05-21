@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "connection_success": true,
+  "test_message": "test_message_from_test_5",
+  "response": "{\"type\": \"error\", \"data\": {\"message\": \"Invalid JSON format\", \"error\": \"Expecting value: line 1 column 1 (char 0)\"}}",
+  "duration": 2.1518261432647705,
+  "timestamp": "2025-10-27T19:57:56.425840",
+  "test_name": "WebSocket Connectivity"
+}

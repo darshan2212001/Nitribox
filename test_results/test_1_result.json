@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "response_code": 200,
+  "response_time": 2.047416,
+  "health_data": {
+    "message": "ZyaeL NutriBox API",
+    "status": "running",
+    "database": {
+      "initialized": true,
+      "connected": true,
+      "error": null,
+      "meal_plans": 5,
+      "nutritionists": 0
+    },
+    "environment": "development"
+  },
+  "duration": 2.0595598220825195,
+  "timestamp": "2025-10-27T19:57:48.457920",
+  "test_name": "API Health Check"
+}

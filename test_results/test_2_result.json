@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "connectivity": "success",
+  "record_counts": {
+    "clients": 0,
+    "nutritionists": 0,
+    "orders": 0,
+    "subscriptions": 0,
+    "meal_plans": 5,
+    "daily_meals": 0
+  },
+  "duration": 0.644331693649292,
+  "timestamp": "2025-10-27T19:57:51.277370",
+  "test_name": "Database Connectivity"
+}

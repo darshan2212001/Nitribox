@@ -26,23 +26,23 @@ export default function StatsCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4 }}
       whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-md p-6 border border-border hover:shadow-lg transition-shadow duration-300"
+      className="bg-white rounded-2xl shadow-sm p-5 md:p-6 border border-border hover:shadow-md transition-all duration-200 hover:-translate-y-1"
     >
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-3 sm:mb-4">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="p-3 bg-primary/10 rounded-lg"
+          className="p-2 sm:p-3 bg-primary/10 rounded-lg"
         >
-          <Icon className="w-6 h-6 text-primary" />
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
         </motion.div>
         {trend && (
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className={`text-sm font-semibold ${
+            className={`text-xs sm:text-sm font-semibold ${
               trend.isPositive ? 'text-[#22C55E]' : 'text-[#FF6B6B]'
             }`}
           >
@@ -54,12 +54,12 @@ export default function StatsCard({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="text-2xl font-bold text-foreground mb-1"
+        className="text-xl sm:text-2xl font-bold text-foreground mb-1"
         data-testid={`text-stat-${title.toLowerCase().replace(/\s+/g, '-')}`}
       >
         {value}
       </motion.h3>
-      <p className="text-sm text-muted-foreground">{title}</p>
+      <p className="text-xs sm:text-sm text-muted-foreground">{title}</p>
       {subtitle && (
         <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>
       )}
